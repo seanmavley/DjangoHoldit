@@ -36,8 +36,8 @@ def dimension(request, values, color=None, alpha=None):
 
 	del draw # Done drawing. NSA, take the rest!
 
-	# Normal Django takes over from here
-	response = HttpResponse(mimetype="image/png")
+	# Normal Django takes over from here. Django 1.7 Plus doesn't support mimetype as argument
+	response = HttpResponse(content_type="image/png")
 	# save images as PNG and push to template
 	im.save(response, 'PNG')
 
