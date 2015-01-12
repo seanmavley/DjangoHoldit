@@ -16,10 +16,10 @@ Steps to host locally
 ======================
 This is a django app, so surely, django is needed. I worked on in django 1.7 final, so you might wanna stick to that version or higher. 
 
-1) Clone this repository
-2) Change DEBUG = False in Placeholder/settings.py to Debug = True 
-3) In the project root folder (where the manage.py is), start your development server. Hook it to a port other than the default 8000, so you can use it alongside other apps that might be using the 8000 already.
-4) Have fun.
+1. Clone this repository
+2. Change DEBUG = False in Placeholder/settings.py to Debug = True 
+3. In the project root folder (where the manage.py is), start your development server. Hook it to a port other than the default 8000, so you can use it alongside other apps that might be using the 8000 already.
+4. Have fun.
 
 Steps to host online
 =====================
