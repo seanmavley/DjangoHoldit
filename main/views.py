@@ -9,7 +9,10 @@ def home(request):
     return render_to_response('index.html')
 
 
-def dimension(request, values, color=None, alpha=None):
+def dimension(request, values=None, color=None, alpha=None):
+    if values is None:
+        values = '500x500'
+
     #split removes the 'x' from the catched values
     output = values.split('x')
     # stores the list into x and y vars
@@ -18,7 +21,7 @@ def dimension(request, values, color=None, alpha=None):
     from PIL import Image, ImageDraw
 
     #for handling the color variations
-    if color == None:
+    if color is None:
         color = (191, 191, 191)
     else:
         a, b, c = color.split('.')
