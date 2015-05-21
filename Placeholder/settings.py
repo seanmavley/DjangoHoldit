@@ -20,9 +20,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'bv)1#qcb!k^$$1y7-d5mk+a&xt&e!=7x%&qts_@wp)6-kz$g3@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['*']
 
@@ -88,11 +88,3 @@ STATIC_URL = '/static/'
 handler404 = 'Menpha.views.file_not_found_404'
 handler500 = 'Menpha.views.server_error'
 handler403 = 'Menpha.views.perm_denied'
-
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
-    }
-}
