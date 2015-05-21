@@ -39,11 +39,15 @@ def dimension(request, values=None, color=None, alpha=None):
     size = (int(x), int(y))
     im = Image.new('RGB', size, color=color)
 
+    # To do
+    # make this scale according to size of image
+    # requested?
+    fontsize = 20
+
     draw = ImageDraw.Draw(im)
     text_color = (255, 255, 255)
     text_pos = (size[0]/2.7, size[1]/2)
     text = '[' + str(values) + ']'
-    fontsize = 30
     font = ImageFont.truetype("arial.ttf", fontsize)
     draw.text(text_pos, text, font=font, fill=text_color)
 
