@@ -1,5 +1,6 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
+from PIL import Image, ImageDraw, ImageFont
 
 
 def home(request):
@@ -13,53 +14,52 @@ def dimension(request, values=None, color=None, alpha=None):
     if values is None:
         values = '500x500'
 
-    #split removes the 'x' from the catched values
+    # split removes the 'x' from the catched values
     output = values.split('x')
     # stores the list into x and y vars
     x, y = output[0], output[1]
-    # time to import PIL
-    from PIL import Image, ImageDraw
 
-    #for handling the color variations
+    # for handling the color variations
     if color is None:
         color = (191, 191, 191)
     else:
         a, b, c = color.split('.')
         color = (int(a), int(b), int(c))
 
-    #if alpha != None:
+    # Try doing some Alpha of image?
+    # Not necessary, but just for the fun of it? ;)
+
+    # if alpha != None:
     #   color = color.append(0.5)
 
-    #if alpha != None:
+    # if alpha != None:
     #   im.convert('RGBA')
 
     # feeding dimension for use in drawing image
     size = (int(x), int(y))
-    # color, by default is line 16
     im = Image.new('RGB', size, color=color)
 
-    # Todo:Anyway to increase font size as
-    # per increase in dimension requested??
     draw = ImageDraw.Draw(im)
     text_color = (255, 255, 255)
-    text_pos = (size[0]/2, size[1]/2)
-    text = str(values)
-    draw.text(text_pos, text, fill=text_color)
+    text_pos = (size[0]/2.7, size[1]/2)
+    text = '[' + str(values) + ']'
+    fontsize = 30
+    font = ImageFont.truetype("arial.ttf", fontsize)
+    draw.text(text_pos, text, font=font, fill=text_color)
 
-    # Done drawing. NSA, take the rest!
     del draw
 
-    # Normal Django takes over from here. 
+    # Normal Django takes over from here.
     # Django 1.7+ doesn't support mimetype as argument
     # Using content_type instead
-    response = HttpResponse(content_type="image/png")
-    # save images as PNG and push to template
-    im.save(response, 'PNG')
+    response = HttpResponse(content_type="image/jpeg")
+    # save images as jpeg and push to template
+    im.save(response, 'jpeg')
 
-    return response  # Tadaaaa
+    return response
 
 
-# Miscellenous 
+# Error Pages
 def file_not_found_404(request):
     return render(request, '404.html')
 
