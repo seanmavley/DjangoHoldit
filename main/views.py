@@ -10,14 +10,20 @@ def home(request):
     return render_to_response('index.html')
 
 
-def dimension(request, values=None, color=None, alpha=None):
+def dimension(request, values=None, color=None, text=None):
     if values is None:
         values = '500x500'
 
     # split removes the 'x' from the catched values
     output = values.split('x')
     # stores the list into x and y vars
-    x, y = output[0], output[1]
+    # but if no y value provided, display
+    # square image based on single value provided
+    try:
+        x, y = output[0], output[1]
+    except:
+        x = output[0]
+        y = x
 
     # for handling the color variations
     if color is None:
@@ -39,26 +45,35 @@ def dimension(request, values=None, color=None, alpha=None):
     size = (int(x), int(y))
     im = Image.new('RGB', size, color=color)
 
-    # To do
-    # make this scale according to size of image
-    # requested?
-    fontsize = 20
+    if text == None:
+        text_show = '[' + str(values) + ']'
+    else:
+        text_show = str(text)
+
+    fontsize = 1
+    img_fraction = 0.50
+
 
     draw = ImageDraw.Draw(im)
     text_color = (255, 255, 255)
-    text_pos = (size[0]/2.7, size[1]/2)
-    text = '[' + str(values) + ']'
+    # text_pos = (10, 25)
+    text_pos = (size[0]/8, size[1]/8)
+
     font = ImageFont.truetype("arial.ttf", fontsize)
-    draw.text(text_pos, text, font=font, fill=text_color)
+
+    while font.getsize(text_show)[0] < img_fraction*im.size[0]:
+        fontsize += 1
+        font = ImageFont.truetype("arial.ttf", fontsize)
+    draw.text(text_pos, text_show, font=font, fill=text_color)
 
     del draw
 
     # Normal Django takes over from here.
     # Django 1.7+ doesn't support mimetype as argument
     # Using content_type instead
-    response = HttpResponse(content_type="image/jpeg")
+    response = HttpResponse(content_type="image/png")
     # save images as jpeg and push to template
-    im.save(response, 'jpeg')
+    im.save(response, 'png')
 
     return response
 

@@ -66,14 +66,18 @@
             </thead>
             <tbody>
               <tr>
-                <td>Append dimension you want as placeholder like this: <kbd>http://myaddress/100x100</kbd>. The myaddress can be a local instance of this app on your computer or via this website address.</td>
+                <td>Append dimension you want as placeholder like this: <kbd>http://i.khophi.co/100x100</kbd>. The myaddress can be a local instance of this app on your computer or via this website address.</td>
                 <td>
                   <img src="{% url 'default' %}">
                 </td>
               </tr>
               <tr>
-                <td>Vary colors of the placeholder images by specifying the RGB values like this: <kbd>http://myaddress/100x100/as/255.0.0</kbd>. REMEMBER to include the '/as/' part of the URL</td>
-                <td><img src="/500x500/as/255.0.0/"></td>
+                <td>Vary colors of the placeholder images by specifying the RGB values like this: <kbd>http://i.khophi.co/100x100/c/255.0.0</kbd>. REMEMBER to include the '/c/' part of the URL. The 'c' stands for Color</td>
+                <td><img src="/300/c/255.0.0/"></td>
+              </tr>
+              <tr>
+                <td><strong>NEW:</strong> Add custom text to your rendered placeholder images: <kbd>http://i.khophi.co/t/My name is big</kbd>. You can either hyphenate your texts, like /My-name-is-big/ or even without the hyphens</td>
+                <td><img src="/500x500/t/My text is here"></td>
               </tr>
             </tbody>
           </table>
