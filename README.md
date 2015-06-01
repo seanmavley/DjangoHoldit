@@ -6,12 +6,12 @@ See working instance online: http://i.khophi.co Its great for working when in of
 Features
 ========
 * Displays image as per dimension specified from url like http://url.com/100x100/
-* Displays image in a specified color as per appending the /as/<RGB_values> like http://url.com/100x100/as/10.10.10/
+* Displays image in a specified color as per appending the /as/<RGB_values> like http://url.com/100x100/c/10.10.10/
 * Displays images using jpeg instead of png
 
 How to use?
 ===========
-Visit http://i.khophi.co/500x500/ to see an example. Append the dimension you want displayed to the URL, in the format, <number>x<number>. If using instance of the app locally (or on your PC), simply append the dimension to your localhost address like so: http://localhost:<port>/100x100/
+Visit http://i.khophi.co/ to see working example.
 
 Steps to host locally
 ======================
