@@ -1,100 +1,140 @@
-{% load static %}
+{% load static %} {% load compress %}
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Django Hold It - Django App Alternative for Placehold.it</title>
-    <link rel="stylesheet" href="{% static 'css/foundation.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/mycss.css'%}">
-    <script src="{% static 'js/vendor/modernizr.js'%}"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    {% compress css %}
+    <link href="{% static 'css/app.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static 'css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static 'css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection" /> {% endcompress %}
+    <link rel="shortcut icon" href="{% static 'favicon.ico'%}">
+</head>
 
-      ga('create', 'UA-50196007-1', 'djangoholdit.herokuapp.com');
-      ga('send', 'pageview');
-
-    </script>
-  </head>
-  <body>
-    
-    <div class="off-canvas-wrap">
-      <div class="inner-wrap">
-        <nav class="tab-bar">
-          <section class="left-small">
-            <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-          </section>
-
-          <section class="middle tab-bar-section">
-            <h1 class="title">Django Holdit</h1>
-          </section>
-
-          <!--<section class="right-small">
-            <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
-          </section>-->
-        </nav>
-
-        <aside class="left-off-canvas-menu">
-          <ul class="off-canvas-list">
-            <li><label>Menu</label></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="http://github.com/seanmavley/djangoholdit" target="new">Source Code</a></li>
-            <li><a href="http://khophi.co/about/">Developer</a></li>
-          </ul>
-        </aside>
-
-        <!--<aside class="right-off-canvas-menu">
-          <ul class="off-canvas-list">
-            <li><label>Users</label></li>
-            <li><a href="#">Hari Seldon</a></li>
-            ...
-          </ul>
-        </aside>-->
-
-        <section class="main-section">
-        <div class="row">
-          <div class="small-12 columns">
-          <table>
-            <thead>
-              <tr>
-                <th>What?</th>
-                <th>Result</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Append dimension you want as placeholder like this: <kbd>http://i.khophi.co/100x100</kbd>. The myaddress can be a local instance of this app on your computer or via this website address.</td>
-                <td>
-                  <img src="{% url 'default' %}">
-                </td>
-              </tr>
-              <tr>
-                <td>Vary colors of the placeholder images by specifying the RGB values like this: <kbd>http://i.khophi.co/100x100/c/255.0.0</kbd>. REMEMBER to include the '/c/' part of the URL. The 'c' stands for Color</td>
-                <td><img src="/300/c/255.0.0/"></td>
-              </tr>
-              <tr>
-                <td><strong>NEW:</strong> Add custom text to your rendered placeholder images: <kbd>http://i.khophi.co/t/My name is big</kbd>. You can either hyphenate your texts, like /My-name-is-big/ or even without the hyphens</td>
-                <td><img src="/500x500/t/My text is here"></td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
+<body>
+    <!-- Unified Menu System -->
+    <div class="row" style="padding-top:10px;">
+        <div class="large-10 large-centered columns">
+            <a class='dropdown-button btn blue lighten-1' href='#' data-activates='dropdown1'> Menu </a>
+            <ul id='dropdown1' class='dropdown-content' style="z-index: 200;">
+                <li><a href="http://khophi.co">Main Homepage</a></li>
+                <li><a href="http://github.com/seanmavley/">Source Code</a></li>
+                <li><a href="#">Credits</a></li>
+                <li class="divider"></li>
+                <li><a href="http://khophi.co/about/">About Me</a></li>
+            </ul>
+            <a class='dropdown-button btn white lighten-1 black-text right' href='#' data-activates='dropdown2'> Projects </a>
+            <ul id='dropdown2' class='dropdown-content' style="z-index: 200;">
+                <li><a href="http://menpha.org/" target="new">Menpha</a></li>
+                <li><a href="http://noodles.khophi.co" target="new">Noodles</a></li>
+                <li><a href="http://i.khophi.co/" target="new">Django Hold It</a></li>
+                <li><a href="http://khophi.co/siya/" target="new">Siya</a></li>
+            </ul>
         </div>
-
-        </section>
-
-      <a class="exit-off-canvas"></a>
-
-      </div>
     </div>
-    
-    <script src="{% static 'js/vendor/jquery.js'%}"></script>
-    <script src="{% static 'js/foundation.min.js'%}"></script>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
+    <div class="divider blue dark-1" style="margin-bottom:15px;"></div>
+    <!-- End Unified Menu System -->
+    <div class="row">
+        <div class="col s12 m6 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% url 'placeholder' '240' %}">
+                    <span class="card-title">Wise Square</span>
+                </div>
+                <div class="card-content">
+                    <p>Specify only one side of the dimension and get a square.</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'placeholder' '240' %}" target="new">See example</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% url 'placeholder' '300x250' %}">
+                    <span class="card-title">Both Sides</span>
+                </div>
+                <div class="card-content">
+                    <p>Specify both lengths of the dimension to cut image to your taste.</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'placeholder' '300x250' %}" target="new">See example</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% url 'placeholder' '300x250/42A5F5' %}">
+                    <span class="card-title">Add Flavor</span>
+                </div>
+                <div class="card-content">
+                    <p>Now, change colors on the fly, call it 'zonal color markings'?</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'placeholder' '300x250/42A5F5' %}" target="new">See example</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{% url 'placeholder' '300x250&text=Custom Text' %}">
+                    <span class="card-title">Communicate</span>
+                </div>
+                <div class="card-content">
+                    <p>Describe what each image is supposed to mean or do</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'placeholder' '240&text=Custom%20dimensions' %}" target="new">See example</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider blue lighten-2"></div>
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card blue darken-4">
+                <div class="card-content white-text">
+                    <span class="card-title">What is Django Hold It?</span>
+                    <p class="">Django Hold It is designed to make serving dummy images for front-end application developments fast and easy. It simply takes kicking your image serving server on your local machine, hooked to a free port, and linking to them anytime with varied combinations, just to light up your development, and give a visual cue with custom text, as to what belongs where and what each image represent.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="btn-flat white-text blue darken-1">Best Use Case</a>
+                    <div class="divider"></div>
+                    <a href="#" class="btn-flat white-text blue darken-2">Going Advanced</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card green darken-4">
+                <div class="card-content white-text">
+                    <span class="card-title">The Profit?</span>
+                    <p>You win a lot using Django Hold It, as long as it is for the best use case.</p>
+                    <ul class="collection">
+                      <li class="collection-item green darken-4">No coding skills required. Just run and profit</li>
+                      <li class="collection-item green darken-4">No installations required</li>
+                      <li class="collection-item green darken-4">100% offline, which means...</li>
+                      <li class="collection-item green darken-4">Blazingly Fast, with tons of customizations</li>
+                      <li class="collection-item green darken-4">Also accessible online, on any device</li>
+                    </ul>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="btn-flat white-text green darken-1">See Scaffold Example</a>
+                    <div class="divider"></div>
+                    <a href="#" class="btn-flat white-text green darken-2">Whats More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'js/jquery-2.1.1.min.js'%}"></script>
+<script src="{% static 'js/jquery.cookie.js'%}"></script>
+<script src="{% static 'js/materialize.js'%}"></script>
+<script src="{% static 'js/main.js'%}"></script>
+<script src="{% static 'js/init.js'%}"></script>
+
 </html>
