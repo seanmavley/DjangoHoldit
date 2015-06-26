@@ -1,5 +1,7 @@
 A simple django application for serving placeholder images similar to Placehold.it . 
-See working instance online: [Django Hold It]('http://i.kkhophi.co') Its great for working when in offline mode, on your local PC.
+See working instance online: http://i.kkhophi.co 
+
+Its great for working when in offline mode, on your local PC.
 
 # Features
 All Placehold.it does, with an extra flavor of easy offline setup and use.
