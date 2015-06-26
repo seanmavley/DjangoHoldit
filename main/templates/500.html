@@ -1,64 +1,10 @@
-{% load static %}
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Django Hold It - Django App Alternative for Placehold.it</title>
-    <link rel="stylesheet" href="{% static 'css/foundation.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/mycss.css'%}">
-    <script src="{% static 'js/vendor/modernizr.js'%}"></script>
-  </head>
-  <body>
-    
-    <div class="off-canvas-wrap">
-      <div class="inner-wrap">
-        <nav class="tab-bar">
-          <section class="left-small">
-            <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-          </section>
-
-          <section class="middle tab-bar-section">
-            <h1 class="title">Djangoholdit</h1>
-          </section>
-        </nav>
-
-        <aside class="left-off-canvas-menu">
-          <ul class="off-canvas-list">
-            <li><label>Menu</label></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="http://google.com/+Nkansahrexford" target="new">About</a></li>
-          </ul>
-        </aside>
-
-        <!--<aside class="right-off-canvas-menu">
-          <ul class="off-canvas-list">
-            <li><label>Users</label></li>
-            <li><a href="#">Hari Seldon</a></li>
-            ...
-          </ul>
-        </aside>-->
-
-        <section class="main-section">
-        <div class="row">
-          <div class="small-12 columns">
-          <p>
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="small-12 columns">
+        <p>
             It is likely you're not following the instructions on the homepage. Can you please <a href="/">try again?</a>
-          </p>
-          </div>
-        </div>
-
-        </section>
-
-      <a class="exit-off-canvas"></a>
-
-      </div>
+        </p>
     </div>
-    
-    <script src="{% static 'js/vendor/jquery.js'%}"></script>
-    <script src="{% static 'js/foundation.min.js'%}"></script>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
-</html>
+</div>
+{% endblock %}
