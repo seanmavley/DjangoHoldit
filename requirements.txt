@@ -1,6 +1,2 @@
 Django
-Pillow
-gunicorn
-psycopg2
-static
-wsgiref
+wand

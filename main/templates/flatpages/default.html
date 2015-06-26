@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ flatpage.title }} {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="small-12 large-8 large-centered medium-centered medium-10 columns">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title black-text">{{ flatpage.title }}</span>
+                    {{ flatpage.content }}
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

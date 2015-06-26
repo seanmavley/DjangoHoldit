@@ -1,42 +1,15 @@
-{% load static %} {% load compress %}
-<!doctype html>
-<html class="no-js" lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Django Hold It - Django App Alternative for Placehold.it</title>
-    {% compress css %}
-    <link href="{% static 'css/app.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="{% static 'css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="{% static 'css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection" /> {% endcompress %}
-    <link rel="shortcut icon" href="{% static 'favicon.ico'%}">
-</head>
-
-<body>
-    <!-- Unified Menu System -->
-    <div class="row" style="padding-top:10px;">
-        <div class="large-10 large-centered columns">
-            <a class='dropdown-button btn blue lighten-1' href='#' data-activates='dropdown1'> Menu </a>
-            <ul id='dropdown1' class='dropdown-content' style="z-index: 200;">
-                <li><a href="http://khophi.co">Main Homepage</a></li>
-                <li><a href="http://github.com/seanmavley/">Source Code</a></li>
-                <li><a href="#">Credits</a></li>
-                <li class="divider"></li>
-                <li><a href="http://khophi.co/about/">About Me</a></li>
-            </ul>
-            <a class='dropdown-button btn white lighten-1 black-text right' href='#' data-activates='dropdown2'> Projects </a>
-            <ul id='dropdown2' class='dropdown-content' style="z-index: 200;">
-                <li><a href="http://menpha.org/" target="new">Menpha</a></li>
-                <li><a href="http://noodles.khophi.co" target="new">Noodles</a></li>
-                <li><a href="http://i.khophi.co/" target="new">Django Hold It</a></li>
-                <li><a href="http://khophi.co/siya/" target="new">Siya</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="divider blue dark-1" style="margin-bottom:15px;"></div>
-    <!-- End Unified Menu System -->
-    <div class="row">
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+<div class="row">
+  <center style="padding:20px;" class="">
+    <a href="/download-and-use/" class="btn waves-effect waves-light ">Download & Use</a>
+    <div class="divider" style="margin-bottom:10px; margin-top:10px;"></div>
+    <iframe src="https://ghbtns.com/github-btn.html?user=seanmavley&repo=djangoholdit&type=star&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+  </center>
+</div>
+<div class="row">
         <div class="col s12 m6 l3">
             <div class="card">
                 <div class="card-image">
@@ -100,41 +73,120 @@
             <div class="card blue darken-4">
                 <div class="card-content white-text">
                     <span class="card-title">What is Django Hold It?</span>
-                    <p class="">Django Hold It is designed to make serving dummy images for front-end application developments fast and easy. It simply takes kicking your image serving server on your local machine, hooked to a free port, and linking to them anytime with varied combinations, just to light up your development, and give a visual cue with custom text, as to what belongs where and what each image represent.</p>
+                    <p class="">Django Hold It is similar to placehold.it - serving dummy images, but different in other ways. Django Hold It makes offline image serving as simple as possible, avoiding lengthy installations or cumbersome setup steps.</p>
                 </div>
                 <div class="card-action">
-                    <a href="#" class="btn-flat white-text blue darken-1">Best Use Case</a>
+                    <a href="/download-and-use/" class="btn-flat white-text blue darken-1">Download & Use</a>
                     <div class="divider"></div>
-                    <a href="#" class="btn-flat white-text blue darken-2">Going Advanced</a>
+                    <a href="/best-use-case/" class="btn-flat white-text blue darken-2">Best Use Case</a>
                 </div>
             </div>
+          <!-- <div class="col s12 m6"> -->
+            <div class="card yellow darken-4">
+                <div class="card-content white-text">
+                    <span class="card-title">For Example</span>
+                    <p>Are you wondering of how to put a dummy image server to use for quick UI scaffolding?</p>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="btn-flat white-text yellow darken-3">See Scaffold Example</a>
+                </div>
+            </div>
+        <!-- </div> -->
         </div>
         <div class="col s12 m6">
             <div class="card green darken-4">
                 <div class="card-content white-text">
                     <span class="card-title">The Profit?</span>
-                    <p>You win a lot using Django Hold It, as long as it is for the best use case.</p>
+                    <p>You win a lot using Django Hold It, as long as it is for the best use case (see below)</p>
                     <ul class="collection">
                       <li class="collection-item green darken-4">No coding skills required. Just run and profit</li>
+                      <li class="collection-item green darken-4">No reliance on language, requests are served via http</li>
                       <li class="collection-item green darken-4">No installations required</li>
                       <li class="collection-item green darken-4">100% offline, which means...</li>
                       <li class="collection-item green darken-4">Blazingly Fast, with tons of customizations</li>
                       <li class="collection-item green darken-4">Also accessible online, on any device</li>
                     </ul>
                 </div>
-                <div class="card-action">
-                    <a href="#" class="btn-flat white-text green darken-1">See Scaffold Example</a>
-                    <div class="divider"></div>
-                    <a href="#" class="btn-flat white-text green darken-2">Whats More</a>
-                </div>
             </div>
-        </div>
+        </div>        
     </div>
-</body>
-<script src="{% static 'js/jquery-2.1.1.min.js'%}"></script>
-<script src="{% static 'js/jquery.cookie.js'%}"></script>
-<script src="{% static 'js/materialize.js'%}"></script>
-<script src="{% static 'js/main.js'%}"></script>
-<script src="{% static 'js/init.js'%}"></script>
+  <div id="credits" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Credits</h4>
+      <p>
+        The initial version of Django Hold It can be found in this repository. It later evolved to become what it is today based on the work of Django-placeholdit. Big ups to <a href="https://github.com/stevelacey/django-placeholdit" target="new">Steve Lacey</a>
+      </p>
+      <p>
+        For License, please see the github repository of Django Hold It.
+      </p>
+    </div>
 
-</html>
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green white-text green btn-flat">Download & Use</a>
+    </div>
+  </div>
+
+  <div id="advanced" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Going Advanced</h4>
+      There are other features Django Hold It comes with to help make your usage easier, should you want to accomplish a higher level of usage. See some more functionality below.
+      <p>
+        <h5>Install</h5>
+        <div class="divider"></div>
+        Below are exampleas
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat black-text">Serve-on-Startup</a>
+      <a href="#" class="modal-action modal-close waves-effect waves-green white-text green btn-flat">Add Items</a>
+    </div>
+  </div>
+
+  <div id="use" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>How to Run</h4>
+      It takes relatively little time to setup Djang Hold It. Let's do that then!
+      <p>
+        <h5>Pre-requisites</h5>
+        <div class="divider"></div>
+        <ul>
+          <li>Ensure you have Python 2.7+ installed. Reference how to install Python on your machine from the web</li>
+          <li>Ensure you have PIP installed. If not you can do that by <code>sudo apt-get install python-pip</code> if you are on Ubuntu. Reference how to install PIP on your machine from the web</li>
+        </ul>
+      </p>
+      <p>
+        <h5>Download .zip from Github</h5>
+        <div class="divider"></div>
+        <ul>
+          <li>Download the source of the Django Hold It from Github.</li>
+          <li>Extract .zip file</li>
+          <li>Open your terminal and change directory to the extracted folder, so something like <code>cd ~/Downloads/djangoholdit/</code></li>
+          <li>In terminal, run <code>sudo pip install -r requirements.txt</code></li>
+          <li>Then start the server by typing <code>python manage.py runserver</code></li>
+          <li>Visit <a href="http://localhost:8000/500" target="new">your localhost</a> in your browser to see in action</li>
+        </ul>
+      </p>
+      <p>
+        <h4>How to Use</h4>
+        <div class="divider"></div>
+        Below are the available options available to use with Django Hold It. Click on each of the links to see an example in the browser.
+        <ul>
+          <li></li>
+        </ul>
+      </p>
+      <p>
+        <h4>Going Advanced</h4>
+        <div class="divider"></div>
+        Below are the available options available to use with Django Hold It. Click on each of the links to see an example in the browser.
+        <ul>
+          <li></li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green white-text green btn-flat">Download & Use</a>
+    </div>
+  </div>
+{% endblock %}
