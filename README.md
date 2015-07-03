@@ -17,6 +17,10 @@ Visit http://i.khophi.co/ to see working example.
  - Then start the server by typing python manage.py runserver
  - Visit your localhost in your browser to see in action
 
+# Running tests
+ - You must have the server running on localhost:8000
+ - You must have the chromedriver file in ~/home/khophi/Downloads/ folder. Otherwise, change the resource to point to the respective directory you have yours in.
+ - In the root folder, `python manage test`
 
 Contact
 =======

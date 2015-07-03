@@ -15,5 +15,6 @@ kwargs = {
 
 urlpatterns = patterns('',
     url(r'^$', views.homepage, name='homepage'),
+    url(r'^scaffold/$', views.scaffold, name='scaffold'),
     url(r'^{width}(?:x{height})?(?:\.{format})?(?:/{background}(?:/{color})?)?(?:&text={text})?$'.format(**kwargs), PlaceholderView.as_view(), name='placeholder'),
 )

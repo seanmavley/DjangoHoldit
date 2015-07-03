@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+{% load compress %}
+<html>
+<head>
+  <title>Image Placeholder Scaffold</title>
+    {% compress css %}
+    <link href="{% static 'css/app.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static 'css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static 'css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection" /> {% endcompress %}
+</head>
+<body>
+<div class="row">
+<div class="col s12">
+  <img src="{% url 'placeholder' '200x75&text=Logo' %}">
+  <img src="{% url 'placeholder' '500x50&text=Site Menu' %}" class="right">
+</div>
+  <div class="col s12" style="margin-top:20px;">
+    <img src="{% url 'placeholder' '915x320&text=Slider' %}">
+  </div>
+</div>    
+</body>
+</html>

@@ -11,6 +11,10 @@ def homepage(request):
     return render(request, 'index.html')
 
 
+def scaffold(request):
+    return render(request, 'scaffold.html')
+
+
 class PlaceholderView(View):
     def get(self, request, width, height, background, color, text, format):
         width = int(width)
