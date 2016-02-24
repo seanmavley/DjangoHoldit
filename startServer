@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "After Successful installation, the dummy server will autostart on every reboot"
+
