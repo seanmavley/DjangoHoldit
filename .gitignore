@@ -1,3 +1,4 @@
 static/*
 *.pyc
 db.sqlite3
+main/static/vendor

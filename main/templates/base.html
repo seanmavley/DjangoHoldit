@@ -7,56 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Page Name here {% endblock %} :: The Django Alternative for Placehold.it</title>
     {% compress css %}
-    <link href="{% static 'css/app.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="{% static 'css/materialize.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="{% static 'vendor/Materialize/dist/css/materialize.min.css'%}" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="{% static 'css/style.css'%}" type="text/css" rel="stylesheet" media="screen,projection" /> {% endcompress %}
     <link rel="shortcut icon" href="{% static 'favicon.ico'%}">
 </head>
 
 <body>
     <!-- Unified Menu System -->
-    <div class="row" style="padding-top:10px;">
-        <div class="large-10 large-centered columns">
-
+    <div class="container">
+        <div class="row" style="padding-top:10px;">
             <a class='dropdown-button btn blue lighten-1' href='#' data-activates='dropdown1'> Menu </a>
             <ul id='dropdown1' class='dropdown-content' style="z-index: 200;">
-                <li><a href="http://khophi.co">Khophi.co Home</a></li>
                 <li><a href="/">Homepage</a></li>
-                <li><a href="http://github.com/seanmavley/">Source Code</a></li>
-                <li><a href="#credits" class="modal-trigger">Credits</a></li>
+                <li><a target="new" href="http://khophi.co">Khophi's Dev</a></li>
+                <li><a target="new" href="http://github.com/seanmavley/">Source Code</a></li>
                 <li class="divider"></li>
-                <li><a href="http://khophi.co">About Me</a></li>
+                <li><a target="new" href="http://khophi.co">Developer</a></li>
+                <li><a target="new" href="http://blog.khophi.co">Blog</a></li>
             </ul>
-
-            <a class='dropdown-button btn green lighten-1 white-text' href='#' data-activates='dropdown2'> Learn </a>
-            <ul id='dropdown2' class='dropdown-content' style="z-index: 200;">
-              {% for page in flatpages %}
-                <li><a href="{{ page.url }}">{{ page.title }} </a></li>
-              {% endfor %}
-            </ul>
-
             <a class='dropdown-button btn white lighten-1 black-text right' href='#' data-activates='dropdown3'> Projects </a>
             <ul id='dropdown3' class='dropdown-content' style="z-index: 200;">
-                <li><a href="http://menpha.khophi.co/" target="new">Menpha</a></li>
-                <li><a href="http://noodles.khophi.co" target="new">Noodles</a></li>
-                <li><a href="http://siya.khophi.co" target="new">Siya</a></li>
-                <li><a href="http://khophi.co" target="new">All Projects</a></li>
-            </ul>            
+                <li><a href="http://code.khophi.co/" target="new">CodeBySide</a></li>
+                <li><a href="http://khophi.co" target="new">Recent projects</a></li>
+            </ul>
         </div>
-    </div>
     <div class="divider blue dark-1" style="margin-bottom:15px;"></div>
+    </div>
     <!-- End Unified Menu System -->
-  {% block content %}
-
-  {% endblock %}
-
+    {% block content %} {% endblock %}
 </body>
-<script src="{% static 'js/jquery-2.1.1.min.js'%}"></script>
-<script src="{% static 'js/jquery.cookie.js'%}"></script>
-<script src="{% static 'js/materialize.js'%}"></script>
-<script src="{% static 'js/main.js'%}"></script>
+<script src="{% static 'vendor/jquery/dist/jquery.min.js'%}"></script>
+<script src="{% static 'vendor/Materialize/dist/js/materialize.min.js'%}"></script>
 <script src="{% static 'js/init.js'%}"></script>
 <script type="text/javascript" src="{% static 'js/ga.js'%}"></script>
-
 
 </html>

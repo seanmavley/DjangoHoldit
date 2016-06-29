@@ -1,15 +1,13 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %} Home {% endblock %}
-{% block content %}
-<div class="row">
-  <center style="padding:20px;" class="">
-    <a href="/download-and-use/" class="btn waves-effect waves-light ">Download & Use</a>
-    <div class="divider" style="margin-bottom:10px; margin-top:10px;"></div>
-    <iframe src="https://ghbtns.com/github-btn.html?user=seanmavley&repo=djangoholdit&type=star&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-  </center>
-</div>
-<div class="row">
+{% extends 'base.html' %} {% load static %} {% block title %} Home {% endblock %} {% block content %}
+<div class="container">
+    <div class="row">
+        <center style="padding:20px;" class="">
+            <a href="https://github.com/seanmavley/djangoholdit" target="new" class="btn waves-effect waves-light ">Download & Use</a>
+            <div class="divider" style="margin-bottom:10px; margin-top:10px;"></div>
+            <iframe src="https://ghbtns.com/github-btn.html?user=seanmavley&repo=djangoholdit&type=star&count=true&size=large&v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+        </center>
+    </div>
+    <div class="row">
         <div class="col s12 m6 l3">
             <div class="card">
                 <div class="card-image">
@@ -76,12 +74,10 @@
                     <p class="">Django Hold It is similar to placehold.it - serving dummy images, but different in other ways. Django Hold It makes offline image serving as simple as possible, avoiding lengthy installations or cumbersome setup steps.</p>
                 </div>
                 <div class="card-action">
-                    <a href="/download-and-use/" class="btn-flat white-text blue darken-1">Download & Use</a>
-                    <div class="divider"></div>
-                    <a href="/best-use-case/" class="btn-flat white-text blue darken-2">Best Use Case</a>
+                    <a href="https://github.com/seanmavley/djangoholdit" class="btn-flat white-text blue darken-1">Download & Use</a>
                 </div>
             </div>
-          <!-- <div class="col s12 m6"> -->
+            <!-- <div class="col s12 m6"> -->
             <div class="card yellow darken-4">
                 <div class="card-content white-text">
                     <span class="card-title">For Example</span>
@@ -91,7 +87,7 @@
                     <a href="{% url 'scaffold' %}" class="btn-flat white-text yellow darken-3">See Scaffold Example</a>
                 </div>
             </div>
-        <!-- </div> -->
+            <!-- </div> -->
         </div>
         <div class="col s12 m6">
             <div class="card green darken-4">
@@ -99,95 +95,78 @@
                     <span class="card-title">The Profit?</span>
                     <p>You win a lot using Django Hold It, as long as it is for the best use case (see below)</p>
                     <ul class="collection">
-                      <li class="collection-item green darken-4">Easy and simple to grab and use</li>
-                      <li class="collection-item green darken-4">No coding skills required. Just run and profit</li>
-                      <li class="collection-item green darken-4">No reliance on language, requests are served via http</li>
-                      <li class="collection-item green darken-4">No installations required</li>
-                      <li class="collection-item green darken-4">100% offline, which means...</li>
-                      <li class="collection-item green darken-4">Blazingly Fast, with tons of customizations</li>
-                      <li class="collection-item green darken-4">Also accessible online, on any device</li>
+                        <li class="collection-item green darken-4">Easy and simple to grab and use</li>
+                        <li class="collection-item green darken-4">No coding skills required. Just run and profit</li>
+                        <li class="collection-item green darken-4">No reliance on language, requests are served via http</li>
+                        <li class="collection-item green darken-4">No installations required</li>
+                        <li class="collection-item green darken-4">100% offline, which means...</li>
+                        <li class="collection-item green darken-4">Blazingly Fast, with tons of customizations</li>
+                        <li class="collection-item green darken-4">Also accessible online, on any device</li>
                     </ul>
                 </div>
             </div>
-        </div>        
+        </div>
     </div>
-  <div id="credits" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Credits</h4>
-      <p>
-        The initial version of Django Hold It can be found in this repository. It later evolved to become what it is today based on the work of Django-placeholdit. Big ups to <a href="https://github.com/stevelacey/django-placeholdit" target="new">Steve Lacey</a>
-      </p>
-      <p>
-        For License, please see the github repository of Django Hold It.
-      </p>
+    <div id="advanced" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Going Advanced</h4> There are other features Django Hold It comes with to help make your usage easier, should you want to accomplish a higher level of usage. See some more functionality below.
+            <p>
+                <h5>Install</h5>
+                <div class="divider"></div>
+                Below are exampleas
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat black-text">Serve-on-Startup</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-green white-text green btn-flat">Add Items</a>
+        </div>
     </div>
-
-    <div class="modal-footer">
-      <a href="#" class="modal-action modal-close waves-effect waves-green white-text green btn-flat">Download & Use</a>
+    <div id="use" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>How to Run</h4> It takes relatively little time to setup Djang Hold It. Let's do that then!
+            <p>
+                <h5>Pre-requisites</h5>
+                <div class="divider"></div>
+                <ul>
+                    <li>Ensure you have Python 2.7+ installed. Reference how to install Python on your machine from the web</li>
+                    <li>Ensure you have PIP installed. If not you can do that by <code>sudo apt-get install python-pip</code> if you are on Ubuntu. Reference how to install PIP on your machine from the web</li>
+                </ul>
+            </p>
+            <p>
+                <h5>Download .zip from Github</h5>
+                <div class="divider"></div>
+                <ul>
+                    <li>Download the source of the Django Hold It from Github.</li>
+                    <li>Extract .zip file</li>
+                    <li>Open your terminal and change directory to the extracted folder, so something like <code>cd ~/Downloads/djangoholdit/</code></li>
+                    <li>In terminal, run <code>sudo pip install -r requirements.txt</code></li>
+                    <li>Then start the server by typing <code>python manage.py runserver</code></li>
+                    <li>Visit <a href="http://localhost:8000/500" target="new">your localhost</a> in your browser to see in action</li>
+                </ul>
+            </p>
+            <p>
+                <h4>How to Use</h4>
+                <div class="divider"></div>
+                Below are the available options available to use with Django Hold It. Click on each of the links to see an example in the browser.
+                <ul>
+                    <li></li>
+                </ul>
+            </p>
+            <p>
+                <h4>Going Advanced</h4>
+                <div class="divider"></div>
+                Below are the available options available to use with Django Hold It. Click on each of the links to see an example in the browser.
+                <ul>
+                    <li></li>
+                </ul>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green white-text green btn-flat">Download & Use</a>
+        </div>
     </div>
-  </div>
-
-  <div id="advanced" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Going Advanced</h4>
-      There are other features Django Hold It comes with to help make your usage easier, should you want to accomplish a higher level of usage. See some more functionality below.
-      <p>
-        <h5>Install</h5>
-        <div class="divider"></div>
-        Below are exampleas
-      </p>
+    <div class="">
+      Last updated: June 2016
     </div>
-
-    <div class="modal-footer">
-      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat black-text">Serve-on-Startup</a>
-      <a href="#" class="modal-action modal-close waves-effect waves-green white-text green btn-flat">Add Items</a>
-    </div>
-  </div>
-
-  <div id="use" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>How to Run</h4>
-      It takes relatively little time to setup Djang Hold It. Let's do that then!
-      <p>
-        <h5>Pre-requisites</h5>
-        <div class="divider"></div>
-        <ul>
-          <li>Ensure you have Python 2.7+ installed. Reference how to install Python on your machine from the web</li>
-          <li>Ensure you have PIP installed. If not you can do that by <code>sudo apt-get install python-pip</code> if you are on Ubuntu. Reference how to install PIP on your machine from the web</li>
-        </ul>
-      </p>
-      <p>
-        <h5>Download .zip from Github</h5>
-        <div class="divider"></div>
-        <ul>
-          <li>Download the source of the Django Hold It from Github.</li>
-          <li>Extract .zip file</li>
-          <li>Open your terminal and change directory to the extracted folder, so something like <code>cd ~/Downloads/djangoholdit/</code></li>
-          <li>In terminal, run <code>sudo pip install -r requirements.txt</code></li>
-          <li>Then start the server by typing <code>python manage.py runserver</code></li>
-          <li>Visit <a href="http://localhost:8000/500" target="new">your localhost</a> in your browser to see in action</li>
-        </ul>
-      </p>
-      <p>
-        <h4>How to Use</h4>
-        <div class="divider"></div>
-        Below are the available options available to use with Django Hold It. Click on each of the links to see an example in the browser.
-        <ul>
-          <li></li>
-        </ul>
-      </p>
-      <p>
-        <h4>Going Advanced</h4>
-        <div class="divider"></div>
-        Below are the available options available to use with Django Hold It. Click on each of the links to see an example in the browser.
-        <ul>
-          <li></li>
-        </ul>
-      </p>
-    </div>
-
-    <div class="modal-footer">
-      <a href="#" class="modal-action modal-close waves-effect waves-green white-text green btn-flat">Download & Use</a>
-    </div>
-  </div>
+</div>
 {% endblock %}

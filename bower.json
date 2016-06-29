@@ -1,0 +1,20 @@
+{
+  "name": "djangoholdit",
+  "homepage": "https://github.com/seanmavley/DjangoHoldit",
+  "authors": [
+    "Rexford <hello@khophi.co>"
+  ],
+  "description": "Django Hold It - Just Placehold.it, but made with Django",
+  "main": "",
+  "keywords": [
+    "image-server"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

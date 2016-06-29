@@ -13,8 +13,8 @@ Visit http://i.khophi.co/ to see working example.
  - Download the source of the Django Hold It from Github.
  - Extract .zip file
  - Open your terminal and change directory to the extracted folder, so something like cd ~/Downloads/djangoholdit/
- - In terminal, run sudo pip install -r requirements.txt
- - Then start the server by typing python manage.py runserver
+ - In terminal, run `sudo pip install -r requirements.txt`
+ - Then start the server by typing `python manage.py runserver`
  - Visit your localhost in your browser to see in action
 
 # Running tests
@@ -25,6 +25,10 @@ Visit http://i.khophi.co/ to see working example.
 Contact
 =======
 Want to get in touch? Here: hello@khophi.co
+
+Support
+=======
+Django Hold it is supported by TheAfricanDream.co
 
 License
 =======
